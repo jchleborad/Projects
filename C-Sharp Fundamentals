@@ -39,8 +39,8 @@ namespace StringsNullablesConversionsDecisions
             {
                 Console.WriteLine("False");
             }
-            int y = 42;
-            x = y;
+
+            x = 42;
             Console.WriteLine(x);
 
             if (x.HasValue)
