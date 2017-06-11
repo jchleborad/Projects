@@ -1,22 +1,40 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project for Testing Code", "Project for Testing Code\Project for Testing Code.csproj", "{14C1FDAA-5AC1-4BE6-8899-E7AE9E0523F7}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{14C1FDAA-5AC1-4BE6-8899-E7AE9E0523F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14C1FDAA-5AC1-4BE6-8899-E7AE9E0523F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14C1FDAA-5AC1-4BE6-8899-E7AE9E0523F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14C1FDAA-5AC1-4BE6-8899-E7AE9E0523F7}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace Excercise
+{
+    public class Car //Parent Class
+    {
+        public int Year { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+
+
+    }   
+
+    public class RaceCar : Car
+    {
+        public string Sponsor { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var myCar = new Car();
+
+            myCar.Year = 2014;
+            myCar.Make = "Honda";
+            myCar.Model = "Accord";
+
+            var dreamCar = new RaceCar();
+            dreamCar.Year = 1965;
+            dreamCar.Make = "Ford";
+            dreamCar.Model = "Mustang";
+            dreamCar.Sponsor = "Coder Camps";
+
+            Console.WriteLine("My Car: " + "{0} {1} {2}", myCar.Year, myCar.Make, myCar.Model);
+            Console.WriteLine("Dream Car: " + "Year: {0}, Make: {1}, Model: {2}", dreamCar.Year, dreamCar.Make, dreamCar.Model);
+            Console.ReadLine();
+        }
+    } 
+}
+
